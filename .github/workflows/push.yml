@@ -24,3 +24,6 @@ jobs:
 
       - name: Deploy
         run: aws s3 sync ./web s3://demo.wissver.com
+
+      - name: Update Cloudfront
+        run: aws cloudfront create-invalidation --distribution-id E39S93Y0SWLO38 --paths "/*"
